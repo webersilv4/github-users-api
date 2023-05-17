@@ -38,10 +38,9 @@ const App = () => {
     useEffect(() => {
         ListUser();
     }, []);
-  
     return (
         <>  
-            { !error ? 
+            { error.length < 1 ? 
 
                 <section className='text-center'>
                     <article className='text-white mt-5'>
@@ -73,7 +72,7 @@ const App = () => {
                         </span>
                     
                         <br />
-                        <span>
+                        <span className='col-md-1'>
                             <b>Bio: </b> {user?.bio}
                         </span>
 
@@ -87,7 +86,7 @@ const App = () => {
                         <div className='row col-md-12 mx-auto'>
 
                             {projects?.map((response, key)=>(
-                                <div key={key} className="mt-5 col-md-3 border p-5">
+                                <div key={key} className="mt-5 col-md-3 bg-dft-4 border-right p-5">
                         
                                     <h3 className='text-green-dft'>{response?.name}</h3>
                         
